@@ -8,7 +8,10 @@
 #### BinaryTree
 #### AVL Tree
 #### Ring Buffer
+#### LinkedList
 
 ### Algorithm
 #### Binary Search (Pre order, In order and Post Order)
 #### Min-Max search
+#### SingleLinkedListCycleFinder
+#### MergeSort
