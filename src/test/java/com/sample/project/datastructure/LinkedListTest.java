@@ -38,7 +38,7 @@ public class LinkedListTest {
         linkedList.add("3");
         linkedList.add("4");
         linkedList.remove("1");
-        assertEquals("3",linkedList.getHeader().getElement());
+        assertEquals("3",linkedList.getHead().getElement());
         assertEquals("4",linkedList.get(1));
     }
 

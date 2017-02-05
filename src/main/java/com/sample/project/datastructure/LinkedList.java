@@ -64,7 +64,7 @@ public class LinkedList<E> {
 
 
 
-    public Node getHeader() {
+    public Node getHead() {
         return first;
     }
 
