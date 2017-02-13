@@ -15,7 +15,7 @@ public class BinaryTreeTest {
 
     @Test
     public void binaryTreeInsertion() {
-        BinaryTree<Integer> binaryTree=new BinaryTree<>(integerComparator);
+        BinarySearchTree<Integer> binaryTree=new BinarySearchTree<>(integerComparator);
         binaryTree.put(5);
         binaryTree.put(2);
         binaryTree.put(13);
@@ -35,7 +35,7 @@ public class BinaryTreeTest {
 
     @Test
     public void binaryTreeInOderSearch() {
-        BinaryTree<Integer> binaryTree=new BinaryTree<>(integerComparator);
+        BinarySearchTree<Integer> binaryTree=new BinarySearchTree<>(integerComparator);
         binaryTree.put(5);
         binaryTree.put(2);
         binaryTree.put(13);
@@ -55,7 +55,7 @@ public class BinaryTreeTest {
 
     @Test
     public void binaryTreePreOderSearch() {
-        BinaryTree<Integer> binaryTree=new BinaryTree<>(integerComparator);
+        BinarySearchTree<Integer> binaryTree=new BinarySearchTree<>(integerComparator);
         binaryTree.put(5);
         binaryTree.put(2);
         binaryTree.put(13);
@@ -74,7 +74,7 @@ public class BinaryTreeTest {
 
     @Test
     public void binaryTreePostOderSearch() {
-        BinaryTree<Integer> binaryTree=new BinaryTree<>(integerComparator);
+        BinarySearchTree<Integer> binaryTree=new BinarySearchTree<>(integerComparator);
         binaryTree.put(5);
         binaryTree.put(2);
         binaryTree.put(13);
@@ -91,6 +91,54 @@ public class BinaryTreeTest {
         assertEquals(expected,binaryTree.getPostOrderElements());
         binaryTree.put(9);
         expected.add(2,9);
+        assertEquals(expected,binaryTree.getPostOrderElements());
+    }
+
+    @Test
+    public void buildBSTUsingPreOderAndShouldSatisfyInOrder() {
+
+        BinarySearchTree<Integer> binaryTree=new BinarySearchTree<>(integerComparator);
+        Integer preOderElements[]={5, 2, 4, 9, 13};
+        binaryTree.constructTreeUsingPreOrderedElement(preOderElements);
+
+        List<Integer> expected=new ArrayList<>();
+        expected.add(2);
+        expected.add(4);
+        expected.add(5);
+        expected.add(9);
+        expected.add(13);
+        assertEquals(expected,binaryTree.getInOrderElements());
+    }
+
+    @Test
+    public void buildBSTUsingPreOderAndShouldSatisfyPreOrder() {
+
+        BinarySearchTree<Integer> binaryTree=new BinarySearchTree<>(integerComparator);
+        Integer preOderElements[]={5, 2, 4, 9, 13};
+        binaryTree.constructTreeUsingPreOrderedElement(preOderElements);
+
+        List<Integer> expected=new ArrayList<>();
+        expected.add(5);
+        expected.add(2);
+        expected.add(4);
+        expected.add(9);
+        expected.add(13);
+        assertEquals(expected,binaryTree.getPreOrderdElements());
+    }
+
+    @Test
+    public void buildBSTUsingPreOderAndShouldSatisfyPostOrder() {
+
+        BinarySearchTree<Integer> binaryTree=new BinarySearchTree<>(integerComparator);
+        Integer preOderElements[]={5, 2, 4, 9, 13};
+        binaryTree.constructTreeUsingPreOrderedElement(preOderElements);
+
+        List<Integer> expected=new ArrayList<>();
+        expected.add(2);
+        expected.add(4);
+        expected.add(9);
+        expected.add(13);
+        expected.add(5);
         assertEquals(expected,binaryTree.getPostOrderElements());
     }
 }

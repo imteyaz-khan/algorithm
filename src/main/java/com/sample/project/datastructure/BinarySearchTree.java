@@ -7,14 +7,14 @@ import java.util.List;
 /**
  * Created by imteyaz.khan on 22/01/17.
  */
-public class BinaryTree<T> {
+public class BinarySearchTree<T> {
 
     private final Node NULL =null;
     private final Boolean TRUE=Boolean.TRUE;
     private Node root;
     private Comparator<T> comparator;
 
-    public BinaryTree(Comparator<T> comparator) {
+    public BinarySearchTree(Comparator<T> comparator) {
         this.comparator = comparator;
     }
 
@@ -58,6 +58,13 @@ public class BinaryTree<T> {
         List<T> traversedElements=new ArrayList<>();
         performPostOrder(root, traversedElements);
         return traversedElements;
+    }
+
+    public void constructTreeUsingPreOrderedElement(T elements[]) {
+        root=null;
+        for(T element:elements) {
+            put(element);
+        }
     }
 
     private void performPreOder(Node currentNode,List<T> traversedElements) {
