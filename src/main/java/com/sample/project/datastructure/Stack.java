@@ -21,7 +21,9 @@ public class Stack<T> {
         current=new Entry<>(element,current);
     }
 
-
+    public boolean isEmpty() {
+        return current==null;
+    }
     class Entry<T> {
         Entry previous;
         T element;

@@ -43,9 +43,6 @@ public class BinaryTree<T> {
         T element=preOderNodes[preStart];
         Node node=new Node(element,NULL,NULL);
         int index=getInOrderPosition(element,inOrderNodes)-inStart;
-//        if(inStart==inEnd) {
-//            return node;
-//        }
         node.left=buildTree(preOderNodes, inOrderNodes, preStart+1, preStart+index,inStart,inStart+index);
         node.right=buildTree(preOderNodes, inOrderNodes,preStart+index+1,preEnd,inStart+index+1,inEnd);
         return node;

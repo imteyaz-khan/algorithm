@@ -1,6 +1,7 @@
 package com.sample.project.datastructure;
 
 import com.sample.project.algorithm.Tree.BinaryTree;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -18,5 +19,6 @@ public class BinaryTreeTest {
         binaryTree.constructTreeUsingPreOrderAndInOrderElements(preOrderElements, inOrderElements);
         System.out.println(binaryTree.getPreOrderdElements());
         System.out.println(binaryTree.getInOrderElements());
+        Assert.assertEquals(inOrderElements,binaryTree.getInOrderElements().toArray());
     }
 }

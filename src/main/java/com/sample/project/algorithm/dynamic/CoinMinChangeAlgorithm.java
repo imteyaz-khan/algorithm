@@ -1,5 +1,7 @@
 package com.sample.project.algorithm.dynamic;
 
+import com.sample.project.datastructure.Stack;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -44,8 +46,10 @@ public class CoinMinChangeAlgorithm {
 
 
 
+
+
     public static void main(String args[]) {
         int coins[]={1,2,3};
-        System.out.println(getMinCoinChange(12,coins));
+        System.out.println(getMinCoinChange(1000,coins));
     }
 }

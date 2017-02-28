@@ -10,17 +10,13 @@ import java.util.*;
 public class DijkstraAlgorithm<E> {
 
     private final static int ZERO_DISTANCE=0;
-    private List<Graph.Vertex> vertexes;
     private List<Graph.Edge> edges;
     private Set<Graph.Vertex> unSettledNodes;
     private Set<Graph.Vertex> settledNodes;
     private Map<Graph.Vertex,Integer> distances;
     private Map<Graph.Vertex,Graph.Vertex> predecessor;
 
-
-
     public DijkstraAlgorithm(Graph<E> graph) {
-        this.vertexes=graph.getVertexes();
         this.edges=graph.getEdges();
     }
 
