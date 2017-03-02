@@ -5,14 +5,22 @@
 ### Data Structure
 #### Stack  
 #### Queue  
-#### BinaryTree
+#### BinarySearchTree
 #### AVL Tree
 #### Ring Buffer
 #### LinkedList
 #### Trie
+#### Graph
+#### Binary Tree
 
 ### Algorithm
 #### Binary Search (Pre order, In order and Post Order)
 #### Min-Max search
 #### SingleLinkedListCycleFinder
 #### MergeSort
+#### Dijkstra Algorithm
+#### Balanced01Matrix
+#### CoinMinChange Algorithm
+#### House Coloring
+#### Subset Sum Finder
+#### Common Longest Substring
