@@ -16,7 +16,7 @@ public class DijkstraAlgorithm<E> {
     private Map<Graph.Vertex,Integer> distances;
     private Map<Graph.Vertex,Graph.Vertex> predecessor;
 
-    public DijkstraAlgorithm(Graph<E> graph) {
+    public DijkstraAlgorithm(Graph graph) {
         this.edges=graph.getEdges();
     }
 

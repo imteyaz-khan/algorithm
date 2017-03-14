@@ -29,6 +29,10 @@ public class Queue<T> {
         return element;
     }
 
+    public boolean hasMore() {
+        return head!=null;
+    }
+
     private class Entry{
         T element;
         Entry next;

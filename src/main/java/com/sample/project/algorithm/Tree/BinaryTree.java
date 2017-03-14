@@ -89,13 +89,31 @@ public class BinaryTree<T> {
     }
     public class Node {
 
-        T element;
-        Node left;
-        Node right;
+        private T element;
+        private Node left;
+        private Node right;
         Node(T element, Node left, Node right) {
             this.element = element;
         }
+
+        public T getElement() {
+            return element;
+        }
+
+        public Node getLeft() {
+            return left;
+        }
+
+        public Node getRight() {
+            return right;
+        }
+
+        @Override
+        public String toString() {
+            final StringBuilder sb = new StringBuilder("Node{");
+            sb.append("element=").append(element);
+            sb.append('}');
+            return sb.toString();
+        }
     }
-
-
 }

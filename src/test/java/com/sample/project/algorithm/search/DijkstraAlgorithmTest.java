@@ -21,7 +21,7 @@ public class DijkstraAlgorithmTest {
     public void testExcute() {
         List<Graph.Vertex >  nodes= new ArrayList<>();
         List<Graph.Edge>  edges = new ArrayList<>();
-        Graph<String> graph = new Graph<String>(nodes, edges);
+        Graph graph = new Graph(nodes, edges);
         for (int i = 0; i < 11; i++) {
             Graph.Vertex location = new Vertex("Node_" + i);
             nodes.add(location);

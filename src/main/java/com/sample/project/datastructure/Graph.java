@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by imteyaz.khan on 07/02/17.
  */
-public class Graph<E> {
+public class Graph {
     private List<Vertex> vertexes;
     private List<Edge> edges;
 
