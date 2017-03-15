@@ -1,5 +1,7 @@
 package com.sample.project.datastructure;
 
+import com.sample.project.algorithm.Tree.Node;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -11,31 +13,39 @@ public class BinarySearchTree<T> {
 
     private final Node NULL =null;
     private final Boolean TRUE=Boolean.TRUE;
-    private Node root;
+    private Node<T> root;
     private Comparator<T> comparator;
 
     public BinarySearchTree(Comparator<T> comparator) {
         this.comparator = comparator;
     }
 
+    public Node getRoot() {
+        return root;
+    }
+
+    public Comparator<T> getComparator() {
+        return comparator;
+    }
+
     public void put(T element) {
         if (root == null) {
             root=new Node(element, NULL, NULL, NULL);
         } else {
-            Node current=root;
+            Node<T> current=root;
             while(TRUE) {
-                if(comparator.compare(element,current.element)>0){
-                    if(current.right==null) {
-                        current.right=new Node(element,null,null,current);
+                if(comparator.compare(element,current.getElement())>0){
+                    if(current.getRight()==null) {
+                        current.setRight(new Node(element,null,null,current));
                         return;
                     }
-                    current=current.right;
+                    current=current.getRight();
                 } else {
-                    if(current.left==null) {
-                        current.left=new Node(element,null,null,current);
+                    if(current.getLeft()==null) {
+                        current.setLeft(new Node(element,null,null,current));
                         return;
                     }
-                    current=current.left;
+                    current=current.getLeft();
                 }
             }
         }
@@ -67,43 +77,31 @@ public class BinarySearchTree<T> {
         }
     }
 
-    private void performPreOder(Node currentNode,List<T> traversedElements) {
+    private void performPreOder(Node<T> currentNode,List<T> traversedElements) {
         if(currentNode==null) {
             return;
         }
-        traversedElements.add(currentNode.element);
-        performInOrder(currentNode.left, traversedElements);
-        performInOrder(currentNode.right, traversedElements);
+        traversedElements.add(currentNode.getElement());
+        performInOrder(currentNode.getLeft(), traversedElements);
+        performInOrder(currentNode.getRight(), traversedElements);
     }
 
-    private void performInOrder(Node currentNode,List<T> traversedElements) {
+    private void performInOrder(Node<T> currentNode,List<T> traversedElements) {
         if(currentNode==null) {
             return;
         }
-        performInOrder(currentNode.left, traversedElements);
-        traversedElements.add(currentNode.element);
-        performInOrder(currentNode.right, traversedElements);
+        performInOrder(currentNode.getLeft(), traversedElements);
+        traversedElements.add(currentNode.getElement());
+        performInOrder(currentNode.getRight(), traversedElements);
     }
 
-    private void performPostOrder(Node currentNode,List<T> traversedElements) {
+    private void performPostOrder(Node<T> currentNode,List<T> traversedElements) {
         if(currentNode==null) {
             return;
         }
-        performInOrder(currentNode.left, traversedElements);
-        performInOrder(currentNode.right, traversedElements);
-        traversedElements.add(currentNode.element);
+        performInOrder(currentNode.getLeft(), traversedElements);
+        performInOrder(currentNode.getRight(), traversedElements);
+        traversedElements.add(currentNode.getElement());
     }
 
-
-    private class Node {
-
-        T element;
-        Node left;
-        Node right;
-        Node parent;
-
-        Node(T element, Node left, Node right, Node parent) {
-            this.element = element;
-        }
-    }
 }

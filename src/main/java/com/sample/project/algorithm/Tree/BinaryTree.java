@@ -12,14 +12,13 @@ public class BinaryTree<T> {
 
     private final Node NULL =null;
     private Node root;
-    private int vertexIndex;
 
     public Node put(T element,Node node,boolean left) {
         if(root==null) {
-            root=new Node(element, NULL, NULL);
+            root=new Node(element, NULL, NULL,NULL);
             return root;
         }
-        Node newNode=new Node(element, NULL, NULL);
+        Node newNode=new Node(element, NULL, NULL,NULL);
         if(left) {
             node.left=newNode;
         } else {
@@ -41,7 +40,7 @@ public class BinaryTree<T> {
             return null;
         }
         T element=preOderNodes[preStart];
-        Node node=new Node(element,NULL,NULL);
+        Node node=new Node(element,NULL,NULL,NULL);
         int index=getInOrderPosition(element,inOrderNodes)-inStart;
         node.left=buildTree(preOderNodes, inOrderNodes, preStart+1, preStart+index,inStart,inStart+index);
         node.right=buildTree(preOderNodes, inOrderNodes,preStart+index+1,preEnd,inStart+index+1,inEnd);
@@ -61,22 +60,22 @@ public class BinaryTree<T> {
         return traversedElements;
     }
 
-    private void performPreOder(Node currentNode,List<T> traversedElements) {
+    private void performPreOder(Node<T> currentNode,List<T> traversedElements) {
         if(currentNode==null) {
             return;
         }
-        traversedElements.add(currentNode.element);
-        performPreOder(currentNode.left, traversedElements);
-        performPreOder(currentNode.right, traversedElements);
+        traversedElements.add(currentNode.getElement());
+        performPreOder(currentNode.getLeft(), traversedElements);
+        performPreOder(currentNode.getRight(), traversedElements);
     }
 
-    private void performInOrder(Node currentNode,List<T> traversedElements) {
+    private void performInOrder(Node<T> currentNode,List<T> traversedElements) {
         if(currentNode==null) {
             return;
         }
-        performInOrder(currentNode.left, traversedElements);
-        traversedElements.add(currentNode.element);
-        performInOrder(currentNode.right, traversedElements);
+        performInOrder(currentNode.getLeft(), traversedElements);
+        traversedElements.add(currentNode.getElement());
+        performInOrder(currentNode.getRight(), traversedElements);
     }
 
     private int getInOrderPosition(T element,T[] inOrderElement) {
@@ -87,33 +86,5 @@ public class BinaryTree<T> {
         }
         return -1;
     }
-    public class Node {
 
-        private T element;
-        private Node left;
-        private Node right;
-        Node(T element, Node left, Node right) {
-            this.element = element;
-        }
-
-        public T getElement() {
-            return element;
-        }
-
-        public Node getLeft() {
-            return left;
-        }
-
-        public Node getRight() {
-            return right;
-        }
-
-        @Override
-        public String toString() {
-            final StringBuilder sb = new StringBuilder("Node{");
-            sb.append("element=").append(element);
-            sb.append('}');
-            return sb.toString();
-        }
-    }
 }

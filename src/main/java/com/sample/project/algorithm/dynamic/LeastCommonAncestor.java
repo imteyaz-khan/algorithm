@@ -1,6 +1,7 @@
 package com.sample.project.algorithm.dynamic;
 
 import com.sample.project.algorithm.Tree.BinaryTree;
+import com.sample.project.algorithm.Tree.Node;
 import com.sample.project.algorithm.search.BinarySearch;
 import com.sample.project.datastructure.Queue;
 import com.sample.project.datastructure.Stack;
@@ -16,9 +17,9 @@ public class LeastCommonAncestor<E> {
         this.binaryTree=binaryTree;
     }
 
-    public BinaryTree.Node getLCAWithIterative(E element1,E element2) {
+    public Node getLCAWithIterative(E element1,E element2) {
             boolean status[]=new boolean[2];
-            BinaryTree.Node node=getLCAWithIterative(binaryTree.getRoot(),element1,element2,status);
+            Node node=getLCAWithIterative(binaryTree.getRoot(),element1,element2,status);
             if(node==null) {
                 throw new RuntimeException("Either any one or both them does not exists in BT");
             }
@@ -28,7 +29,7 @@ public class LeastCommonAncestor<E> {
              throw new RuntimeException("No common ancestor exists");
     }
 
-    public BinaryTree.Node getLCAWithIterative(BinaryTree.Node node,E element1,E element2,boolean status[]) {
+    public Node getLCAWithIterative(Node node,E element1,E element2,boolean status[]) {
         if(node==null) {
             return null;
         }
@@ -43,8 +44,8 @@ public class LeastCommonAncestor<E> {
             return node;
         }
 
-        BinaryTree.Node leftLca=getLCAWithIterative(node.getLeft(),element1,element2,status);
-        BinaryTree.Node rightLca=getLCAWithIterative(node.getRight(),element1,element2,status);
+        Node leftLca=getLCAWithIterative(node.getLeft(),element1,element2,status);
+        Node rightLca=getLCAWithIterative(node.getRight(),element1,element2,status);
         if(leftLca!=null && rightLca!=null) {
             return node;
         }
@@ -57,16 +58,16 @@ public class LeastCommonAncestor<E> {
 
     // space complexity O(logN)+O(LogN)+ Recursive stack space
     // and time complexity O(N)+O(N) to find elements Node and then O(N) for LCA finding through while loop
-    public BinaryTree.Node getLCAWithStack(E element1,E element2) {
+    public Node getLCAWithStack(E element1,E element2) {
 
-        Stack<BinaryTree.Node> element1Path=new Stack<>();
+        Stack<Node<E>> element1Path=new Stack<>();
         getNode(binaryTree.getRoot(), element1, element1Path);
-        Stack<BinaryTree.Node> element2Path=new Stack<>();
+        Stack<Node<E>> element2Path=new Stack<>();
         getNode(binaryTree.getRoot(), element2, element2Path);
         if(element1Path.isEmpty() || element2Path.isEmpty()) {
             throw new RuntimeException("Either any one or both them does not exists in BT");
         }
-        BinaryTree.Node element1Node,elemenet2Node;
+        Node element1Node,elemenet2Node;
         while(!element1Path.isEmpty() && !element2Path.isEmpty()) {
             element1Node=element1Path.pop();
             elemenet2Node=element2Path.pop();
@@ -77,7 +78,7 @@ public class LeastCommonAncestor<E> {
         return !element1Path.isEmpty()?element1Path.pop():element2Path.pop();
     }
 
-    private BinaryTree.Node getNode(BinaryTree.Node node, E element,Stack path) {
+    private Node getNode(Node node, E element,Stack path) {
 
         if(node==null) {
             return node;
@@ -86,7 +87,7 @@ public class LeastCommonAncestor<E> {
         if(node.getElement().equals(element)) {
             return node;
         }
-        BinaryTree.Node childNode=getNode(node.getLeft(),element,path);
+        Node childNode=getNode(node.getLeft(),element,path);
         if(childNode==null) {
             childNode=getNode(node.getRight(),element,path);
         }
@@ -98,7 +99,7 @@ public class LeastCommonAncestor<E> {
 
 
 
-    private BinaryTree.Node getNode(BinaryTree.Node node, E element) {
+    private Node getNode(Node node, E element) {
 
         if(node==null) {
             return null;
@@ -106,7 +107,7 @@ public class LeastCommonAncestor<E> {
         if(node.getElement().equals(element)) {
             return node;
         }
-        BinaryTree.Node childNode=getNode(node.getLeft(),element);
+        Node childNode=getNode(node.getLeft(),element);
         if(childNode==null) {
             childNode=getNode(node.getRight(),element);
         }
@@ -114,8 +115,8 @@ public class LeastCommonAncestor<E> {
     }
 
 
-    public BinaryTree.Node getNode(E element) {
-        BinaryTree.Node node=getNode(binaryTree.getRoot(),element);
+    public Node getNode(E element) {
+        Node node=getNode(binaryTree.getRoot(),element);
         if(node==null) {
             throw new RuntimeException("No node exists");
         }
@@ -128,8 +129,8 @@ public class LeastCommonAncestor<E> {
 
     public static void main(String args[]) {
         BinaryTree<Integer> binaryTree=new BinaryTree<>();
-        BinaryTree.Node node;
-        BinaryTree.Node rootNode=binaryTree.put(11,null,true);
+        Node node;
+        Node rootNode=binaryTree.put(11,null,true);
         node=binaryTree.put(6, rootNode, true);
         binaryTree.put(23, node, true);
         node=binaryTree.put(9, node, false);
