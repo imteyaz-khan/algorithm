@@ -33,7 +33,7 @@ public class SubsetSumFinder {
     public static void main(String args[]) {
         int numbers[]={1,3,4,1};
         SubsetSumFinder subsetSumFinder=new SubsetSumFinder();
-        System.out.println(subsetSumFinder.isSumPossibleUsingDP(numbers,100));
+        System.out.println(subsetSumFinder.isSumPossibleUsingDP(numbers,10));
     }
 
 }
