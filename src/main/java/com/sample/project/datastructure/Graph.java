@@ -31,11 +31,15 @@ public class Graph {
         return sb.toString();
     }
 
-    public static class Vertex {
-        private Object element;
+    public static class Vertex<E> {
+        private E element;
 
-        public Vertex(Object element) {
+        public Vertex(E element) {
             this.element = element;
+        }
+
+        public E getElement() {
+            return element;
         }
 
         @Override
