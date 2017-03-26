@@ -24,3 +24,5 @@
 #### House Coloring
 #### Subset Sum Finder
 #### Common Longest Substring
+#### Word Ladder
+#### Number Converter
