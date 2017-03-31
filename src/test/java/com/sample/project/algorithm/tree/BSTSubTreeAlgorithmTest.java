@@ -1,6 +1,5 @@
 package com.sample.project.algorithm.tree;
 
-import com.sample.project.algorithm.Tree.BinarySearchSubTreeAlgorithm;
 import com.sample.project.datastructure.BinarySearchTree;
 import com.sample.project.utility.IntegerComparator;
 import org.junit.Test;

@@ -1,7 +1,6 @@
-package com.sample.project.algorithm.Tree;
+package com.sample.project.algorithm.tree;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**

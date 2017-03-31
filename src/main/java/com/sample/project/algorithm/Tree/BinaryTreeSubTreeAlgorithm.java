@@ -1,6 +1,4 @@
-package com.sample.project.algorithm.Tree;
-
-import com.sample.project.datastructure.BinarySearchTree;
+package com.sample.project.algorithm.tree;
 
 /**
  * Created by imteyaz.khan on 15/03/17.

@@ -1,6 +1,6 @@
 package com.sample.project.datastructure;
 
-import com.sample.project.algorithm.Tree.BinaryTree;
+import com.sample.project.algorithm.tree.BinaryTree;
 import org.junit.Assert;
 import org.junit.Test;
 

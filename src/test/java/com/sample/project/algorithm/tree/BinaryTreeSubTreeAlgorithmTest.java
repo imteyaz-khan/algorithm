@@ -1,8 +1,5 @@
 package com.sample.project.algorithm.tree;
 
-import com.sample.project.algorithm.Tree.BinaryTree;
-import com.sample.project.algorithm.Tree.BinaryTreeSubTreeAlgorithm;
-import com.sample.project.algorithm.Tree.Node;
 import org.junit.Test;
 
 

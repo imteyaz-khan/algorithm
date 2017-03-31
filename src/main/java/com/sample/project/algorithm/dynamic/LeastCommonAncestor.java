@@ -1,9 +1,7 @@
 package com.sample.project.algorithm.dynamic;
 
-import com.sample.project.algorithm.Tree.BinaryTree;
-import com.sample.project.algorithm.Tree.Node;
-import com.sample.project.algorithm.search.BinarySearch;
-import com.sample.project.datastructure.Queue;
+import com.sample.project.algorithm.tree.BinaryTree;
+import com.sample.project.algorithm.tree.Node;
 import com.sample.project.datastructure.Stack;
 
 /**

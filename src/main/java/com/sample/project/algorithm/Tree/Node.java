@@ -1,4 +1,4 @@
-package com.sample.project.algorithm.Tree;
+package com.sample.project.algorithm.tree;
 
 /**
  * Created by imteyaz.khan on 15/03/17.

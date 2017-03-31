@@ -1,6 +1,6 @@
 package com.sample.project.datastructure;
 
-import com.sample.project.algorithm.Tree.Node;
+import com.sample.project.algorithm.tree.Node;
 
 import java.util.ArrayList;
 import java.util.Comparator;

@@ -1,4 +1,4 @@
-package com.sample.project.algorithm.Tree;
+package com.sample.project.algorithm.tree;
 
 import com.sample.project.datastructure.BinarySearchTree;
 

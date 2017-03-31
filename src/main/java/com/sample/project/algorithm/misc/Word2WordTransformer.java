@@ -75,13 +75,6 @@ public class Word2WordTransformer {
     }
 
     private List<Graph.Vertex<String>> getWouldBeNeighboursNodes(String word) {
-//        List<Graph.Vertex<String>> neighbours=new ArrayList<>();
-//        for(Graph.Vertex vertex:vertexes) {
-//            if(match(word,vertex)) {
-//                neighbours.add(vertex);
-//            }
-//        }
-//        return neighbours;
         return vertexes.stream().filter(v->match(word,v)).collect(Collectors.toList());
     }
 
