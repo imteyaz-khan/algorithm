@@ -26,3 +26,4 @@
 #### Common Longest Substring
 #### Word Ladder
 #### Number Converter
+#### Disjoint set
