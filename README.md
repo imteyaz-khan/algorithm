@@ -27,3 +27,5 @@
 #### Word Ladder
 #### Number Converter
 #### Disjoint set
+#### RewardFinder
+#### PairFinder
