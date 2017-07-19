@@ -10,6 +10,9 @@ public class Node<T> {
     Node right;
     Node parent;
 
+    public Node(T element) {
+       this.element=element;
+    }
     public Node(T element, Node left, Node right, Node parent) {
         this.element = element;
     }

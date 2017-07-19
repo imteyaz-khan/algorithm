@@ -12,6 +12,12 @@ public class BinaryTree<T> {
     private final Node NULL =null;
     private Node root;
 
+    public BinaryTree() {
+
+    }
+    public BinaryTree(Node root) {
+        this.root=root;
+    }
     public Node put(T element,Node node,boolean left) {
         if(root==null) {
             root=new Node(element, NULL, NULL,NULL);
