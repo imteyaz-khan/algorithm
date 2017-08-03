@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class RootWordReplaceTest {
     @Test
-    public void testRootReoplacement() {
+    public void testRootReplacement() {
         List<String> words=new ArrayList<>();
         words.add("cat");
         words.add("bat");
