@@ -49,7 +49,7 @@ public class CoinMinChangeAlgorithm {
 
 
     public static void main(String args[]) {
-        int coins[]={1,2,3};
+        int coins[]={1,2,7};
         System.out.println(getMinCoinChange(1000,coins));
     }
 }

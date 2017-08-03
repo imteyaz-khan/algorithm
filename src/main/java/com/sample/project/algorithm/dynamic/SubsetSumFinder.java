@@ -8,7 +8,7 @@ public class SubsetSumFinder {
         if(sum==0) {
             return true;
         }
-        if(numbers.length==index && sum!=0) {
+        if(numbers.length==index) {
             return false;
         }
         return isSumPossible(numbers, index + 1, sum - numbers[index]) || isSumPossible(numbers, index + 1, sum);
