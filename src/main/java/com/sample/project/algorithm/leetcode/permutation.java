@@ -3,9 +3,10 @@ package com.sample.project.algorithm.leetcode;
 /**
  * Created by imteyaz.khan on 01/08/17.
  */
-public class permutation {
+public class Permutation {
 
     public void permutation(String prefix,String str) {
+        System.out.println(str);
         if(str.length()==0) {
             System.out.println(prefix);
         } else {
@@ -16,7 +17,7 @@ public class permutation {
     }
     public static void main(String[] args) {
         String str="abc";
-        permutation test=new permutation();
+        Permutation test=new Permutation();
         test.permutation("", str);
     }
 }
