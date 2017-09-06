@@ -18,7 +18,7 @@ public class BinaryTreeTopView {
         Set<Integer> visited = new HashSet<>();
         Queue<LevelInfo> queue = new Queue<>();
         queue.enqueue(new LevelInfo(binaryTree.getRoot(), 0));
-        while (queue.hasMore()) {
+        while (queue.isEmpty()) {
             LevelInfo levelInfo = queue.dequeue();
             if (!visited.contains(levelInfo.distance)) {
                 visited.add(levelInfo.distance);

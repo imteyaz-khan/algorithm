@@ -29,7 +29,7 @@ public class Queue<T> {
         return element;
     }
 
-    public boolean hasMore() {
+    public boolean isEmpty() {
         return head!=null;
     }
 

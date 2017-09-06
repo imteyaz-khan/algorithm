@@ -25,9 +25,7 @@ public class Rearrange {
                 int right=Math.max(nextNegative,nextPositive);
                 int left=Math.min(nextNegative,nextPositive);
                 int tmp=arr[right];
-                for(int index=right;index>left+1;index--) {
-                    arr[index]=arr[index-1];
-                }
+                System.arraycopy(arr, left + 1, arr, left + 1 + 1, right - (left + 1));
                 arr[left+1]=tmp;
                 nextNegative=left+2;
                 nextPositive=nextNegative;
