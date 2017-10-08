@@ -4,6 +4,7 @@ package com.sample.project.algorithm.dynamic;
  * Created by imteyaz.khan on 08/07/17.
  */
 public class MaxCandies {
+
     public static int getMaxCandies(int cells[][],int row,int col) {
         if(cells==null||row<0||col<0) {
             return -1;
